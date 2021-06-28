@@ -6,6 +6,7 @@ import 'package:audio_service/audio_service.dart';
 import 'package:audio_session/audio_session.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_audio_demo/pages/one/index.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -48,6 +49,14 @@ class MainScreen extends StatelessWidget {
                 if (!running) ...[
                   // UI to show when we're not running, i.e. a menu.
                   audioPlayerButton(),
+                  RaisedButton(
+                    child: Text('page one'),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                        return OnePage();
+                      }));
+                    },
+                  ),
                 ] else ...[
                   // UI to show when we're running, i.e. player state/controls.
 
@@ -390,12 +399,12 @@ class AudioPlayerTask extends BackgroundAudioTask {
 class MediaLibrary {
   final _items = <MediaItem>[
     MediaItem(
-      id: "https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3",
-      album: "Science Friday",
-      title: "A Salute To Head-Scratching Science",
-      artist: "Science Friday and WNYC Studios",
-      duration: Duration(milliseconds: 5739820),
-      artUri: "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg",
+      id: "https://m701.music.126.net/20210625165102/cc88a3b0278f414cc5895d072fb74e89/jdyyaac/0752/0f5e/0209/086e5a579f84fa5ba5975c4b23467302.m4a",
+      album: "你要如何，我们就如何",
+      title: "你要如何 我们就如何",
+      artist: "康姆士COM'Z",
+      duration: Duration(milliseconds: 50000),
+      artUri: "http://p1.music.126.net/0kIhZ79xP169WBrZMyekWw==/109951162856187206.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0",
     ),
     MediaItem(
       id: "https://s3.amazonaws.com/scifri-segments/scifri201711241.mp3",
