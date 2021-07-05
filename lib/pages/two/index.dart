@@ -8,7 +8,7 @@ class TwoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('page Two')),
       body: Center(
-        child: Text('Two page'),
+        child: Text('Two'),
       ),
     );
   }
